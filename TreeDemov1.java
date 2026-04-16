@@ -88,12 +88,20 @@ class Node{
 	   
 	   
 	   
-	   /*
-	   post-order traversal
-	   */
+	   /**
+    	    * Performs a post-order traversal of the tree.
+    	    * Prints the left subtree, then the right subtree,
+    	    * then the current node.
+    	    *
+    	    * @param root the root of the subtree being traversed
+    	    */
 	  
 	   public void postOrderTraversal(Node root){
-         //implement in here
+         	if(root != null){
+         	   postOrderTraversal(root.left);
+         	   postOrderTraversal(root.right);
+         	   System.out.print(root.value + " ");
+      		}
 		   
 	   }
 	   
