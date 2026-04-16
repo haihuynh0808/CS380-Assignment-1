@@ -71,11 +71,19 @@ class Node{
 
 	   
 	   
-	   /*
-	   in-order traversal
-	   */
+	   /**
+    	    * Performs an in-order traversal of the tree.
+    	    * Prints the left subtree, then the current node,
+    	    * then the right subtree.
+    	    *
+    	    * @param root the root of the subtree being traversed
+    	    */
 	   public void inOrderTraversal(Node root){
-	      //implement in here
+	      if(root != null){
+         	inOrderTraversal(root.left);
+         	System.out.print(root.value + " ");
+         	inOrderTraversal(root.right);
+      	      }
 	   }
 	   
 	   
