@@ -131,12 +131,20 @@ class Node{
 	   
 	   
 	   
-	   /*
-	   a method to find the node in the tree
-	   with a smallest key
-	   */
+	   /**
+    	    * Returns the smallest value in the tree.
+    	    *
+    	    * @param root the root of the subtree being searched
+    	    * @return the smallest key in the subtree
+    	    */
 	   public int getMin(Node root){
-         //implement in here
+         	if(root == null){
+         	   throw new IllegalArgumentException("Tree is empty.");
+      		}
+      		while(root.left != null){
+         	   root = root.left;
+      		}
+      		return root.value;
 	      
 	   }
 	  
