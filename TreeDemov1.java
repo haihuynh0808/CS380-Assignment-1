@@ -107,12 +107,25 @@ class Node{
 	   
 	   
 	   
-	   /*
-	   a method to find the node in the tree
-	   with a specific value
-	   */
+	   /**
+    	    * Searches the tree for a specific key.
+    	    *
+    	    * @param root the root of the subtree being searched
+    	    * @param key the value to search for
+    	    * @return true if the key exists in the tree, false otherwise
+    	    */
 	   public boolean find(Node root, int key){
-		 //implement in here
+		 if(root == null){
+         	    return false;
+      		 }
+      		 if(root.value == key){
+         	    return true;
+      		 }
+      		 if(key < root.value){
+         	    return find(root.left, key);
+      		 }else{
+         	    return find(root.right, key);
+      		 }
 		  
 	   }
 	   
