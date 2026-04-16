@@ -150,12 +150,20 @@ class Node{
 	  
 	  
 	  
-	   /*
-	   a method to find the node in the tree
-	   with a largest key
-	   */
+	   /**
+    	    * Returns the largest value in the tree.
+    	    *
+    	    * @param root the root of the subtree being searched
+    	    * @return the largest key in the subtree
+    	    */
 	   public int getMax(Node root){
-         //implement in here
+         	if(root == null){
+         	   throw new IllegalArgumentException("Tree is empty.");
+      		}
+      		while(root.right != null){
+         	   root = root.right;
+      		}
+      		return root.value;
 	   }
 	   
 	   
